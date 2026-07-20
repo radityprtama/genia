@@ -1,7 +1,7 @@
 import { Card } from '@workspace/ui/components/card'
-import { Table } from "@/components/marketing/sections/projects-table"
-import { UptimeIllustration } from "@/components/illustrations/uptime-illustration"
-import { MemoryUsageIllustration } from "@/components/illustrations/memory-usage-illustration"
+import { Table } from "./sections/projects-table"
+import { UptimeIllustration } from "../../illustrations/uptime-illustration"
+import { MemoryUsageIllustration } from "../../illustrations/memory-usage-illustration"
 import { Activity, BetweenHorizonalEnd, MemoryStick } from 'lucide-react'
 
 export default function BentoSeven() {

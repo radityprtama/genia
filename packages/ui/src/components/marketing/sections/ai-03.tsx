@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu";
 import { Textarea } from "@workspace/ui/components/textarea";
-import { cn } from "@/lib/utils";
+import { cn } from "../../../lib/utils";
 import {
   IconBolt,
   IconChevronDown,

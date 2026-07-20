@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useTheme } from "next-themes";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 /**
  * Prevent hydration mismatch when reading theme on first render

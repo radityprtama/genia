@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MarketingRouteImport } from './routes/_marketing'
 import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
+import { Route as MarketingSlugRouteImport } from './routes/_marketing.$slug'
 import { Route as MarketingAboutRouteImport } from './routes/_marketing.about'
 import { Route as MarketingBrandRouteImport } from './routes/_marketing.brand'
 import { Route as MarketingCompanyRouteImport } from './routes/_marketing.company'
@@ -23,7 +24,12 @@ import { Route as MarketingOssFriendsRouteImport } from './routes/_marketing.oss
 import { Route as MarketingPricingRouteImport } from './routes/_marketing.pricing'
 import { Route as MarketingBlogIndexRouteImport } from './routes/_marketing.blog.index'
 import { Route as MarketingBlogSlugRouteImport } from './routes/_marketing.blog.$slug'
+import { Route as MarketingBrandComponentsRouteImport } from './routes/_marketing.brand.components'
+import { Route as MarketingCustomersSlugRouteImport } from './routes/_marketing.customers.$slug'
+import { Route as MarketingIntegrationsSlugRouteImport } from './routes/_marketing.integrations.$slug'
 import { Route as MarketingBlogCategorySlugRouteImport } from './routes/_marketing.blog.category.$slug'
+import { Route as MarketingHelpArticleSlugRouteImport } from './routes/_marketing.help.article.$slug'
+import { Route as MarketingHelpCategorySlugRouteImport } from './routes/_marketing.help.category.$slug'
 
 const MarketingRoute = MarketingRouteImport.update({
   id: '/_marketing',
@@ -32,6 +38,11 @@ const MarketingRoute = MarketingRouteImport.update({
 const MarketingIndexRoute = MarketingIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingSlugRoute = MarketingSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
   getParentRoute: () => MarketingRoute,
 } as any)
 const MarketingAboutRoute = MarketingAboutRouteImport.update({
@@ -94,67 +105,115 @@ const MarketingBlogSlugRoute = MarketingBlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => MarketingRoute,
 } as any)
+const MarketingBrandComponentsRoute =
+  MarketingBrandComponentsRouteImport.update({
+    id: '/components',
+    path: '/components',
+    getParentRoute: () => MarketingBrandRoute,
+  } as any)
+const MarketingCustomersSlugRoute = MarketingCustomersSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => MarketingCustomersRoute,
+} as any)
+const MarketingIntegrationsSlugRoute =
+  MarketingIntegrationsSlugRouteImport.update({
+    id: '/$slug',
+    path: '/$slug',
+    getParentRoute: () => MarketingIntegrationsRoute,
+  } as any)
 const MarketingBlogCategorySlugRoute =
   MarketingBlogCategorySlugRouteImport.update({
     id: '/blog/category/$slug',
     path: '/blog/category/$slug',
     getParentRoute: () => MarketingRoute,
   } as any)
+const MarketingHelpArticleSlugRoute =
+  MarketingHelpArticleSlugRouteImport.update({
+    id: '/article/$slug',
+    path: '/article/$slug',
+    getParentRoute: () => MarketingHelpRoute,
+  } as any)
+const MarketingHelpCategorySlugRoute =
+  MarketingHelpCategorySlugRouteImport.update({
+    id: '/category/$slug',
+    path: '/category/$slug',
+    getParentRoute: () => MarketingHelpRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof MarketingIndexRoute
+  '/$slug': typeof MarketingSlugRoute
   '/about': typeof MarketingAboutRoute
-  '/brand': typeof MarketingBrandRoute
+  '/brand': typeof MarketingBrandRouteWithChildren
   '/company': typeof MarketingCompanyRoute
   '/contact': typeof MarketingContactRoute
-  '/customers': typeof MarketingCustomersRoute
-  '/help': typeof MarketingHelpRoute
-  '/integrations': typeof MarketingIntegrationsRoute
+  '/customers': typeof MarketingCustomersRouteWithChildren
+  '/help': typeof MarketingHelpRouteWithChildren
+  '/integrations': typeof MarketingIntegrationsRouteWithChildren
   '/open': typeof MarketingOpenRoute
   '/oss-friends': typeof MarketingOssFriendsRoute
   '/pricing': typeof MarketingPricingRoute
   '/blog/$slug': typeof MarketingBlogSlugRoute
+  '/brand/components': typeof MarketingBrandComponentsRoute
+  '/customers/$slug': typeof MarketingCustomersSlugRoute
+  '/integrations/$slug': typeof MarketingIntegrationsSlugRoute
   '/blog/': typeof MarketingBlogIndexRoute
   '/blog/category/$slug': typeof MarketingBlogCategorySlugRoute
+  '/help/article/$slug': typeof MarketingHelpArticleSlugRoute
+  '/help/category/$slug': typeof MarketingHelpCategorySlugRoute
 }
 export interface FileRoutesByTo {
+  '/$slug': typeof MarketingSlugRoute
   '/about': typeof MarketingAboutRoute
-  '/brand': typeof MarketingBrandRoute
+  '/brand': typeof MarketingBrandRouteWithChildren
   '/company': typeof MarketingCompanyRoute
   '/contact': typeof MarketingContactRoute
-  '/customers': typeof MarketingCustomersRoute
-  '/help': typeof MarketingHelpRoute
-  '/integrations': typeof MarketingIntegrationsRoute
+  '/customers': typeof MarketingCustomersRouteWithChildren
+  '/help': typeof MarketingHelpRouteWithChildren
+  '/integrations': typeof MarketingIntegrationsRouteWithChildren
   '/open': typeof MarketingOpenRoute
   '/oss-friends': typeof MarketingOssFriendsRoute
   '/pricing': typeof MarketingPricingRoute
   '/': typeof MarketingIndexRoute
   '/blog/$slug': typeof MarketingBlogSlugRoute
+  '/brand/components': typeof MarketingBrandComponentsRoute
+  '/customers/$slug': typeof MarketingCustomersSlugRoute
+  '/integrations/$slug': typeof MarketingIntegrationsSlugRoute
   '/blog': typeof MarketingBlogIndexRoute
   '/blog/category/$slug': typeof MarketingBlogCategorySlugRoute
+  '/help/article/$slug': typeof MarketingHelpArticleSlugRoute
+  '/help/category/$slug': typeof MarketingHelpCategorySlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_marketing': typeof MarketingRouteWithChildren
+  '/_marketing/$slug': typeof MarketingSlugRoute
   '/_marketing/about': typeof MarketingAboutRoute
-  '/_marketing/brand': typeof MarketingBrandRoute
+  '/_marketing/brand': typeof MarketingBrandRouteWithChildren
   '/_marketing/company': typeof MarketingCompanyRoute
   '/_marketing/contact': typeof MarketingContactRoute
-  '/_marketing/customers': typeof MarketingCustomersRoute
-  '/_marketing/help': typeof MarketingHelpRoute
-  '/_marketing/integrations': typeof MarketingIntegrationsRoute
+  '/_marketing/customers': typeof MarketingCustomersRouteWithChildren
+  '/_marketing/help': typeof MarketingHelpRouteWithChildren
+  '/_marketing/integrations': typeof MarketingIntegrationsRouteWithChildren
   '/_marketing/open': typeof MarketingOpenRoute
   '/_marketing/oss-friends': typeof MarketingOssFriendsRoute
   '/_marketing/pricing': typeof MarketingPricingRoute
   '/_marketing/': typeof MarketingIndexRoute
   '/_marketing/blog/$slug': typeof MarketingBlogSlugRoute
+  '/_marketing/brand/components': typeof MarketingBrandComponentsRoute
+  '/_marketing/customers/$slug': typeof MarketingCustomersSlugRoute
+  '/_marketing/integrations/$slug': typeof MarketingIntegrationsSlugRoute
   '/_marketing/blog/': typeof MarketingBlogIndexRoute
   '/_marketing/blog/category/$slug': typeof MarketingBlogCategorySlugRoute
+  '/_marketing/help/article/$slug': typeof MarketingHelpArticleSlugRoute
+  '/_marketing/help/category/$slug': typeof MarketingHelpCategorySlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$slug'
     | '/about'
     | '/brand'
     | '/company'
@@ -166,10 +225,16 @@ export interface FileRouteTypes {
     | '/oss-friends'
     | '/pricing'
     | '/blog/$slug'
+    | '/brand/components'
+    | '/customers/$slug'
+    | '/integrations/$slug'
     | '/blog/'
     | '/blog/category/$slug'
+    | '/help/article/$slug'
+    | '/help/category/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/$slug'
     | '/about'
     | '/brand'
     | '/company'
@@ -182,11 +247,17 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/'
     | '/blog/$slug'
+    | '/brand/components'
+    | '/customers/$slug'
+    | '/integrations/$slug'
     | '/blog'
     | '/blog/category/$slug'
+    | '/help/article/$slug'
+    | '/help/category/$slug'
   id:
     | '__root__'
     | '/_marketing'
+    | '/_marketing/$slug'
     | '/_marketing/about'
     | '/_marketing/brand'
     | '/_marketing/company'
@@ -199,8 +270,13 @@ export interface FileRouteTypes {
     | '/_marketing/pricing'
     | '/_marketing/'
     | '/_marketing/blog/$slug'
+    | '/_marketing/brand/components'
+    | '/_marketing/customers/$slug'
+    | '/_marketing/integrations/$slug'
     | '/_marketing/blog/'
     | '/_marketing/blog/category/$slug'
+    | '/_marketing/help/article/$slug'
+    | '/_marketing/help/category/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -221,6 +297,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof MarketingIndexRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/$slug': {
+      id: '/_marketing/$slug'
+      path: '/$slug'
+      fullPath: '/$slug'
+      preLoaderRoute: typeof MarketingSlugRouteImport
       parentRoute: typeof MarketingRoute
     }
     '/_marketing/about': {
@@ -307,6 +390,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingBlogSlugRouteImport
       parentRoute: typeof MarketingRoute
     }
+    '/_marketing/brand/components': {
+      id: '/_marketing/brand/components'
+      path: '/components'
+      fullPath: '/brand/components'
+      preLoaderRoute: typeof MarketingBrandComponentsRouteImport
+      parentRoute: typeof MarketingBrandRoute
+    }
+    '/_marketing/customers/$slug': {
+      id: '/_marketing/customers/$slug'
+      path: '/$slug'
+      fullPath: '/customers/$slug'
+      preLoaderRoute: typeof MarketingCustomersSlugRouteImport
+      parentRoute: typeof MarketingCustomersRoute
+    }
+    '/_marketing/integrations/$slug': {
+      id: '/_marketing/integrations/$slug'
+      path: '/$slug'
+      fullPath: '/integrations/$slug'
+      preLoaderRoute: typeof MarketingIntegrationsSlugRouteImport
+      parentRoute: typeof MarketingIntegrationsRoute
+    }
     '/_marketing/blog/category/$slug': {
       id: '/_marketing/blog/category/$slug'
       path: '/blog/category/$slug'
@@ -314,17 +418,82 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingBlogCategorySlugRouteImport
       parentRoute: typeof MarketingRoute
     }
+    '/_marketing/help/article/$slug': {
+      id: '/_marketing/help/article/$slug'
+      path: '/article/$slug'
+      fullPath: '/help/article/$slug'
+      preLoaderRoute: typeof MarketingHelpArticleSlugRouteImport
+      parentRoute: typeof MarketingHelpRoute
+    }
+    '/_marketing/help/category/$slug': {
+      id: '/_marketing/help/category/$slug'
+      path: '/category/$slug'
+      fullPath: '/help/category/$slug'
+      preLoaderRoute: typeof MarketingHelpCategorySlugRouteImport
+      parentRoute: typeof MarketingHelpRoute
+    }
   }
 }
 
+interface MarketingBrandRouteChildren {
+  MarketingBrandComponentsRoute: typeof MarketingBrandComponentsRoute
+}
+
+const MarketingBrandRouteChildren: MarketingBrandRouteChildren = {
+  MarketingBrandComponentsRoute: MarketingBrandComponentsRoute,
+}
+
+const MarketingBrandRouteWithChildren = MarketingBrandRoute._addFileChildren(
+  MarketingBrandRouteChildren,
+)
+
+interface MarketingCustomersRouteChildren {
+  MarketingCustomersSlugRoute: typeof MarketingCustomersSlugRoute
+}
+
+const MarketingCustomersRouteChildren: MarketingCustomersRouteChildren = {
+  MarketingCustomersSlugRoute: MarketingCustomersSlugRoute,
+}
+
+const MarketingCustomersRouteWithChildren =
+  MarketingCustomersRoute._addFileChildren(MarketingCustomersRouteChildren)
+
+interface MarketingHelpRouteChildren {
+  MarketingHelpArticleSlugRoute: typeof MarketingHelpArticleSlugRoute
+  MarketingHelpCategorySlugRoute: typeof MarketingHelpCategorySlugRoute
+}
+
+const MarketingHelpRouteChildren: MarketingHelpRouteChildren = {
+  MarketingHelpArticleSlugRoute: MarketingHelpArticleSlugRoute,
+  MarketingHelpCategorySlugRoute: MarketingHelpCategorySlugRoute,
+}
+
+const MarketingHelpRouteWithChildren = MarketingHelpRoute._addFileChildren(
+  MarketingHelpRouteChildren,
+)
+
+interface MarketingIntegrationsRouteChildren {
+  MarketingIntegrationsSlugRoute: typeof MarketingIntegrationsSlugRoute
+}
+
+const MarketingIntegrationsRouteChildren: MarketingIntegrationsRouteChildren = {
+  MarketingIntegrationsSlugRoute: MarketingIntegrationsSlugRoute,
+}
+
+const MarketingIntegrationsRouteWithChildren =
+  MarketingIntegrationsRoute._addFileChildren(
+    MarketingIntegrationsRouteChildren,
+  )
+
 interface MarketingRouteChildren {
+  MarketingSlugRoute: typeof MarketingSlugRoute
   MarketingAboutRoute: typeof MarketingAboutRoute
-  MarketingBrandRoute: typeof MarketingBrandRoute
+  MarketingBrandRoute: typeof MarketingBrandRouteWithChildren
   MarketingCompanyRoute: typeof MarketingCompanyRoute
   MarketingContactRoute: typeof MarketingContactRoute
-  MarketingCustomersRoute: typeof MarketingCustomersRoute
-  MarketingHelpRoute: typeof MarketingHelpRoute
-  MarketingIntegrationsRoute: typeof MarketingIntegrationsRoute
+  MarketingCustomersRoute: typeof MarketingCustomersRouteWithChildren
+  MarketingHelpRoute: typeof MarketingHelpRouteWithChildren
+  MarketingIntegrationsRoute: typeof MarketingIntegrationsRouteWithChildren
   MarketingOpenRoute: typeof MarketingOpenRoute
   MarketingOssFriendsRoute: typeof MarketingOssFriendsRoute
   MarketingPricingRoute: typeof MarketingPricingRoute
@@ -335,13 +504,14 @@ interface MarketingRouteChildren {
 }
 
 const MarketingRouteChildren: MarketingRouteChildren = {
+  MarketingSlugRoute: MarketingSlugRoute,
   MarketingAboutRoute: MarketingAboutRoute,
-  MarketingBrandRoute: MarketingBrandRoute,
+  MarketingBrandRoute: MarketingBrandRouteWithChildren,
   MarketingCompanyRoute: MarketingCompanyRoute,
   MarketingContactRoute: MarketingContactRoute,
-  MarketingCustomersRoute: MarketingCustomersRoute,
-  MarketingHelpRoute: MarketingHelpRoute,
-  MarketingIntegrationsRoute: MarketingIntegrationsRoute,
+  MarketingCustomersRoute: MarketingCustomersRouteWithChildren,
+  MarketingHelpRoute: MarketingHelpRouteWithChildren,
+  MarketingIntegrationsRoute: MarketingIntegrationsRouteWithChildren,
   MarketingOpenRoute: MarketingOpenRoute,
   MarketingOssFriendsRoute: MarketingOssFriendsRoute,
   MarketingPricingRoute: MarketingPricingRoute,

@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "@tanstack/react-router";
 import { useTheme } from "next-themes";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 const links = [
   {

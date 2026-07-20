@@ -16,3 +16,7 @@ todos.json
 
 # typescript
 *.tsbuildinfo
+
+# content-collections
+.content-collections
+

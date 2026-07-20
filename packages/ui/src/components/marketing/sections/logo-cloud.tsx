@@ -1,19 +1,19 @@
 "use client";
-import { Beacon } from "@/components/logos/beacon";
-import { Bolt } from "@/components/logos/bolt";
-import { Cisco } from "@/components/logos/cisco";
-import { Hulu } from "@/components/logos/hulu";
-import { OpenAIFull } from "@/components/logos/open-ai";
-import { Primevideo } from "@/components/logos/prime";
-import { Stripe } from "@/components/logos/stripe";
-import { Supabase } from "@/components/logos/supabase";
-import { Polars } from "@/components/logos/polars";
-import { AnimatePresence, motion } from "motion/react";
+import { Beacon } from "../../logos/beacon";
+import { Bolt } from "../../logos/bolt";
+import { Cisco } from "../../logos/cisco";
+import { Hulu } from "../../logos/hulu";
+import { OpenAIFull } from "../../logos/open-ai";
+import { Primevideo } from "../../logos/prime";
+import { Stripe } from "../../logos/stripe";
+import { Supabase } from "../../logos/supabase";
+import { Polars } from "../../logos/polars";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { VercelFull } from "@/components/logos/vercel";
-import { Spotify } from "@/components/logos/spotify";
-import { PayPal } from "@/components/logos/paypal";
-import { LeapWallet } from "@/components/logos/leap-wallet";
+import { VercelFull } from "../../logos/vercel";
+import { Spotify } from "../../logos/spotify";
+import { PayPal } from "../../logos/paypal";
+import { LeapWallet } from "../../logos/leap-wallet";
 
 const aiLogos: React.ReactNode[] = [
   <OpenAIFull height={24} width="auto" />,

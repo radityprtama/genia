@@ -1,4 +1,4 @@
-import { appUrl } from "@/lib/app-url"
+import { appUrl } from "../../lib/app-url"
 "use client";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@workspace/ui/components/button";
@@ -13,14 +13,14 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@workspace/ui/components/navigation-menu";
-import { useMedia } from "@/hooks/use-media";
+import { useMedia } from "../../hooks/use-media";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@workspace/ui/components/accordion";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import { ThemeSwitcher } from "../kibo-ui/theme-switcher";
 import {
   Sparkle,

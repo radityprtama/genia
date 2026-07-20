@@ -3,8 +3,8 @@
 import { ChevronRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { cn } from "@/lib/utils";
-import { useMedia } from "@/hooks/use-media";
+import { cn } from "../../lib/utils";
+import { useMedia } from "../../hooks/use-media";
 
 const SHADCN_AVATAR = "https://avatars.githubusercontent.com/u/124599?v=4";
 const MESCHAC_AVATAR = "https://avatars.githubusercontent.com/u/47919550?v=4";

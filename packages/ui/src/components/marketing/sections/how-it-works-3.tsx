@@ -1,7 +1,7 @@
-import { appUrl } from "@/lib/app-url"
+import { appUrl } from "../../../lib/app-url"
 import { Button } from "@workspace/ui/components/button";
-import { DocumentIllustation } from "@/components/illustrations/document-illustration";
-import { CurrencyIllustration } from "@/components/illustrations/currency-illustration";
+import { DocumentIllustation } from "../../illustrations/document-illustration";
+import { CurrencyIllustration } from "../../illustrations/currency-illustration";
 import { ArrowBigRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 

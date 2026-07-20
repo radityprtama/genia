@@ -1,6 +1,6 @@
 import React from "react";
-import { ProductIllustration } from "@/components/illustrations/product-illustration";
-import { GridPattern } from "@/components/blog/grid-pattern";
+import { ProductIllustration } from "../illustrations/product-illustration";
+import { GridPattern } from "../blog/grid-pattern";
 
 interface HeroSectionProps {
   isAuthenticated?: boolean;

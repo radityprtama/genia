@@ -1,4 +1,4 @@
-\nexport const HeroIllustration = () => {
+export const HeroIllustration = () => {
   return (
     <div className="relative max-md:-mx-6">
       <div className="z-1 absolute inset-y-0 my-auto h-fit w-full max-w-72 origin-left scale-75 max-lg:left-6">

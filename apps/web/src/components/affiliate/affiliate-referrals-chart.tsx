@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "@workspace/ui/components/card";
 import {
-  ChartConfig,
+  type ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,

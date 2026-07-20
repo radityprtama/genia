@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "@tanstack/react-router"
 import { Button } from '@workspace/ui/components/button'
-import { HeroIllustration } from "@/components/illustrations/hero-illustration"
+import { HeroIllustration } from "../../illustrations/hero-illustration"
 
 export default function HeroSection() {
     return (

@@ -1,8 +1,8 @@
-import { appUrl } from "@/lib/app-url"
+import { appUrl } from "../../../lib/app-url"
 import { Button } from '@workspace/ui/components/button'
 import { Link } from "@tanstack/react-router"
 import { Card } from '@workspace/ui/components/card'
-import { LayoutIllustration } from "@/components/illustrations/layout-illustration"
+import { LayoutIllustration } from "../../illustrations/layout-illustration"
 
 export default function CallToAction() {
     return (

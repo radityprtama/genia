@@ -1,4 +1,4 @@
-import { appUrl } from "@/lib/app-url"
+import { appUrl } from "../../../lib/app-url"
 import { Button } from "@workspace/ui/components/button";
 import { Check } from "lucide-react";
 import { Link } from "@tanstack/react-router";

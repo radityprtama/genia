@@ -15,6 +15,11 @@ import { Route as DashboardRouteRouteImport } from './routes/dashboard/route'
 import { Route as PreviewRouteImport } from './routes/preview'
 import { Route as AuthLoginRouteImport } from './routes/_auth.login'
 import { Route as AuthResetPasswordRouteImport } from './routes/_auth.reset-password'
+import { Route as AuthTwoFactorRouteImport } from './routes/_auth.two-factor'
+import { Route as AffiliateIndexRouteImport } from './routes/affiliate/index'
+import { Route as AffiliateApplyRouteImport } from './routes/affiliate/apply'
+import { Route as AffiliateDashboardRouteImport } from './routes/affiliate/dashboard'
+import { Route as AffiliateOnboardingRouteImport } from './routes/affiliate/onboarding'
 import { Route as BuilderIndexRouteImport } from './routes/builder/index'
 import { Route as ControlRoomIndexRouteImport } from './routes/control-room/index'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
@@ -58,6 +63,31 @@ const AuthResetPasswordRoute = AuthResetPasswordRouteImport.update({
   id: '/reset-password',
   path: '/reset-password',
   getParentRoute: () => AuthRoute,
+} as any)
+const AuthTwoFactorRoute = AuthTwoFactorRouteImport.update({
+  id: '/two-factor',
+  path: '/two-factor',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AffiliateIndexRoute = AffiliateIndexRouteImport.update({
+  id: '/affiliate/',
+  path: '/affiliate/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AffiliateApplyRoute = AffiliateApplyRouteImport.update({
+  id: '/affiliate/apply',
+  path: '/affiliate/apply',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AffiliateDashboardRoute = AffiliateDashboardRouteImport.update({
+  id: '/affiliate/dashboard',
+  path: '/affiliate/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AffiliateOnboardingRoute = AffiliateOnboardingRouteImport.update({
+  id: '/affiliate/onboarding',
+  path: '/affiliate/onboarding',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const BuilderIndexRoute = BuilderIndexRouteImport.update({
   id: '/builder/',
@@ -143,6 +173,11 @@ export interface FileRoutesByFullPath {
   '/preview': typeof PreviewRouteWithChildren
   '/login': typeof AuthLoginRoute
   '/reset-password': typeof AuthResetPasswordRoute
+  '/two-factor': typeof AuthTwoFactorRoute
+  '/affiliate/apply': typeof AffiliateApplyRoute
+  '/affiliate/dashboard': typeof AffiliateDashboardRoute
+  '/affiliate/onboarding': typeof AffiliateOnboardingRoute
+  '/affiliate/': typeof AffiliateIndexRoute
   '/builder/': typeof BuilderIndexRoute
   '/control-room/': typeof ControlRoomIndexRoute
   '/dashboard/': typeof DashboardIndexRoute
@@ -163,6 +198,11 @@ export interface FileRoutesByTo {
   '/preview': typeof PreviewRouteWithChildren
   '/login': typeof AuthLoginRoute
   '/reset-password': typeof AuthResetPasswordRoute
+  '/two-factor': typeof AuthTwoFactorRoute
+  '/affiliate/apply': typeof AffiliateApplyRoute
+  '/affiliate/dashboard': typeof AffiliateDashboardRoute
+  '/affiliate/onboarding': typeof AffiliateOnboardingRoute
+  '/affiliate': typeof AffiliateIndexRoute
   '/builder': typeof BuilderIndexRoute
   '/control-room': typeof ControlRoomIndexRoute
   '/dashboard': typeof DashboardIndexRoute
@@ -186,6 +226,11 @@ export interface FileRoutesById {
   '/preview': typeof PreviewRouteWithChildren
   '/_auth/login': typeof AuthLoginRoute
   '/_auth/reset-password': typeof AuthResetPasswordRoute
+  '/_auth/two-factor': typeof AuthTwoFactorRoute
+  '/affiliate/apply': typeof AffiliateApplyRoute
+  '/affiliate/dashboard': typeof AffiliateDashboardRoute
+  '/affiliate/onboarding': typeof AffiliateOnboardingRoute
+  '/affiliate/': typeof AffiliateIndexRoute
   '/builder/': typeof BuilderIndexRoute
   '/control-room/': typeof ControlRoomIndexRoute
   '/dashboard/': typeof DashboardIndexRoute
@@ -210,6 +255,11 @@ export interface FileRouteTypes {
     | '/preview'
     | '/login'
     | '/reset-password'
+    | '/two-factor'
+    | '/affiliate/apply'
+    | '/affiliate/dashboard'
+    | '/affiliate/onboarding'
+    | '/affiliate/'
     | '/builder/'
     | '/control-room/'
     | '/dashboard/'
@@ -230,6 +280,11 @@ export interface FileRouteTypes {
     | '/preview'
     | '/login'
     | '/reset-password'
+    | '/two-factor'
+    | '/affiliate/apply'
+    | '/affiliate/dashboard'
+    | '/affiliate/onboarding'
+    | '/affiliate'
     | '/builder'
     | '/control-room'
     | '/dashboard'
@@ -252,6 +307,11 @@ export interface FileRouteTypes {
     | '/preview'
     | '/_auth/login'
     | '/_auth/reset-password'
+    | '/_auth/two-factor'
+    | '/affiliate/apply'
+    | '/affiliate/dashboard'
+    | '/affiliate/onboarding'
+    | '/affiliate/'
     | '/builder/'
     | '/control-room/'
     | '/dashboard/'
@@ -273,6 +333,10 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRouteWithChildren
   ControlRoomRoute: typeof ControlRoomRouteWithChildren
   PreviewRoute: typeof PreviewRouteWithChildren
+  AffiliateApplyRoute: typeof AffiliateApplyRoute
+  AffiliateDashboardRoute: typeof AffiliateDashboardRoute
+  AffiliateOnboardingRoute: typeof AffiliateOnboardingRoute
+  AffiliateIndexRoute: typeof AffiliateIndexRoute
   BuilderIndexRoute: typeof BuilderIndexRoute
   OnboardingIndexRoute: typeof OnboardingIndexRoute
 }
@@ -320,6 +384,41 @@ declare module '@tanstack/react-router' {
       fullPath: '/reset-password'
       preLoaderRoute: typeof AuthResetPasswordRouteImport
       parentRoute: typeof AuthRoute
+    }
+    '/_auth/two-factor': {
+      id: '/_auth/two-factor'
+      path: '/two-factor'
+      fullPath: '/two-factor'
+      preLoaderRoute: typeof AuthTwoFactorRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/affiliate/': {
+      id: '/affiliate/'
+      path: '/affiliate'
+      fullPath: '/affiliate/'
+      preLoaderRoute: typeof AffiliateIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/affiliate/apply': {
+      id: '/affiliate/apply'
+      path: '/affiliate/apply'
+      fullPath: '/affiliate/apply'
+      preLoaderRoute: typeof AffiliateApplyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/affiliate/dashboard': {
+      id: '/affiliate/dashboard'
+      path: '/affiliate/dashboard'
+      fullPath: '/affiliate/dashboard'
+      preLoaderRoute: typeof AffiliateDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/affiliate/onboarding': {
+      id: '/affiliate/onboarding'
+      path: '/affiliate/onboarding'
+      fullPath: '/affiliate/onboarding'
+      preLoaderRoute: typeof AffiliateOnboardingRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/builder/': {
       id: '/builder/'
@@ -445,11 +544,13 @@ const DashboardRouteRouteWithChildren = DashboardRouteRoute._addFileChildren(
 interface AuthRouteChildren {
   AuthLoginRoute: typeof AuthLoginRoute
   AuthResetPasswordRoute: typeof AuthResetPasswordRoute
+  AuthTwoFactorRoute: typeof AuthTwoFactorRoute
 }
 
 const AuthRouteChildren: AuthRouteChildren = {
   AuthLoginRoute: AuthLoginRoute,
   AuthResetPasswordRoute: AuthResetPasswordRoute,
+  AuthTwoFactorRoute: AuthTwoFactorRoute,
 }
 
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
@@ -493,6 +594,10 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRouteWithChildren,
   ControlRoomRoute: ControlRoomRouteWithChildren,
   PreviewRoute: PreviewRouteWithChildren,
+  AffiliateApplyRoute: AffiliateApplyRoute,
+  AffiliateDashboardRoute: AffiliateDashboardRoute,
+  AffiliateOnboardingRoute: AffiliateOnboardingRoute,
+  AffiliateIndexRoute: AffiliateIndexRoute,
   BuilderIndexRoute: BuilderIndexRoute,
   OnboardingIndexRoute: OnboardingIndexRoute,
 }

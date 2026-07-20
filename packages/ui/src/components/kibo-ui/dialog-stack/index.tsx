@@ -1,7 +1,7 @@
 "use client";
 
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
-import { Portal } from "radix-ui";
+import { Portal } from "@radix-ui/react-portal";
 import type {
   ButtonHTMLAttributes,
   Dispatch,
