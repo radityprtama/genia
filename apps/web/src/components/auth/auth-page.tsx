@@ -19,7 +19,7 @@ import { Spinner } from "@workspace/ui/components/spinner";
 
 import { AtSignIcon, ChevronLeftIcon, ArrowLeftIcon } from "lucide-react";
 
-import { FloatingPaths } from "@/components/marketing/sections/floating-paths";
+import { FloatingPaths } from "@workspace/ui/components/marketing/sections/floating-paths";
 import { authClient, signIn, signUp } from "@/lib/auth-client";
 import { resolveRedirectParam } from "@/lib/auth/redirect";
 
