@@ -13,6 +13,7 @@ export const Route = createRootRoute({
       { name: "description", content: "Build AI-powered websites faster with collaborative workflows." },
     ],
     links: [
+      { rel: "icon", href: "/favicon.ico" },
       { rel: "stylesheet", href: appCss },
     ],
   }),
