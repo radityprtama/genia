@@ -1,0 +1,8 @@
+import type { SVGProps } from "react"
+export function Bolt(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="currentColor" />
+    </svg>
+  )
+}

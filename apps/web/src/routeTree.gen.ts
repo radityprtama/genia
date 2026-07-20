@@ -8,59 +8,818 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from "./routes/__root"
-import { Route as IndexRouteImport } from "./routes/index"
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as AuthRouteImport } from './routes/_auth'
+import { Route as MarketingRouteImport } from './routes/_marketing'
+import { Route as ControlRoomRouteImport } from './routes/control-room'
+import { Route as DashboardRouteRouteImport } from './routes/dashboard/route'
+import { Route as PreviewRouteImport } from './routes/preview'
+import { Route as AuthLoginRouteImport } from './routes/_auth.login'
+import { Route as AuthResetPasswordRouteImport } from './routes/_auth.reset-password'
+import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
+import { Route as MarketingAboutRouteImport } from './routes/_marketing.about'
+import { Route as MarketingBrandRouteImport } from './routes/_marketing.brand'
+import { Route as MarketingCompanyRouteImport } from './routes/_marketing.company'
+import { Route as MarketingContactRouteImport } from './routes/_marketing.contact'
+import { Route as MarketingCustomersRouteImport } from './routes/_marketing.customers'
+import { Route as MarketingHelpRouteImport } from './routes/_marketing.help'
+import { Route as MarketingIntegrationsRouteImport } from './routes/_marketing.integrations'
+import { Route as MarketingOpenRouteImport } from './routes/_marketing.open'
+import { Route as MarketingOssFriendsRouteImport } from './routes/_marketing.oss-friends'
+import { Route as MarketingPricingRouteImport } from './routes/_marketing.pricing'
+import { Route as BuilderIndexRouteImport } from './routes/builder/index'
+import { Route as ControlRoomIndexRouteImport } from './routes/control-room/index'
+import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
+import { Route as OnboardingIndexRouteImport } from './routes/onboarding/index'
+import { Route as MarketingBlogIndexRouteImport } from './routes/_marketing.blog.index'
+import { Route as MarketingBlogSlugRouteImport } from './routes/_marketing.blog.$slug'
+import { Route as ControlRoomAffiliatesIndexRouteImport } from './routes/control-room/affiliates/index'
+import { Route as ControlRoomPeopleIndexRouteImport } from './routes/control-room/people/index'
+import { Route as ControlRoomSettingsIndexRouteImport } from './routes/control-room/settings/index'
+import { Route as ControlRoomWorkspacesIndexRouteImport } from './routes/control-room/workspaces/index'
+import { Route as DashboardBillingIndexRouteImport } from './routes/dashboard/billing/index'
+import { Route as DashboardProjectsIndexRouteImport } from './routes/dashboard/projects/index'
+import { Route as DashboardWorkspacesIndexRouteImport } from './routes/dashboard/workspaces/index'
+import { Route as PreviewTokenIndexRouteImport } from './routes/preview/$token/index'
+import { Route as MarketingBlogCategorySlugRouteImport } from './routes/_marketing.blog.category.$slug'
+import { Route as ControlRoomWorkspacesWorkspaceIdIndexRouteImport } from './routes/control-room/workspaces/$workspaceId/index'
+import { Route as DashboardProjectsIdIndexRouteImport } from './routes/dashboard/projects/$id/index'
 
-const IndexRoute = IndexRouteImport.update({
-  id: "/",
-  path: "/",
+const AuthRoute = AuthRouteImport.update({
+  id: '/_auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MarketingRoute = MarketingRouteImport.update({
+  id: '/_marketing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ControlRoomRoute = ControlRoomRouteImport.update({
+  id: '/control-room',
+  path: '/control-room',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRouteRoute = DashboardRouteRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreviewRoute = PreviewRouteImport.update({
+  id: '/preview',
+  path: '/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthResetPasswordRoute = AuthResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => AuthRoute,
+} as any)
+const MarketingIndexRoute = MarketingIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingAboutRoute = MarketingAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingBrandRoute = MarketingBrandRouteImport.update({
+  id: '/brand',
+  path: '/brand',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingCompanyRoute = MarketingCompanyRouteImport.update({
+  id: '/company',
+  path: '/company',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingContactRoute = MarketingContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingCustomersRoute = MarketingCustomersRouteImport.update({
+  id: '/customers',
+  path: '/customers',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingHelpRoute = MarketingHelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingIntegrationsRoute = MarketingIntegrationsRouteImport.update({
+  id: '/integrations',
+  path: '/integrations',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingOpenRoute = MarketingOpenRouteImport.update({
+  id: '/open',
+  path: '/open',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingOssFriendsRoute = MarketingOssFriendsRouteImport.update({
+  id: '/oss-friends',
+  path: '/oss-friends',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingPricingRoute = MarketingPricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const BuilderIndexRoute = BuilderIndexRouteImport.update({
+  id: '/builder/',
+  path: '/builder/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ControlRoomIndexRoute = ControlRoomIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ControlRoomRoute,
+} as any)
+const DashboardIndexRoute = DashboardIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const OnboardingIndexRoute = OnboardingIndexRouteImport.update({
+  id: '/onboarding/',
+  path: '/onboarding/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketingBlogIndexRoute = MarketingBlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingBlogSlugRoute = MarketingBlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const ControlRoomAffiliatesIndexRoute =
+  ControlRoomAffiliatesIndexRouteImport.update({
+    id: '/affiliates/',
+    path: '/affiliates/',
+    getParentRoute: () => ControlRoomRoute,
+  } as any)
+const ControlRoomPeopleIndexRoute = ControlRoomPeopleIndexRouteImport.update({
+  id: '/people/',
+  path: '/people/',
+  getParentRoute: () => ControlRoomRoute,
+} as any)
+const ControlRoomSettingsIndexRoute =
+  ControlRoomSettingsIndexRouteImport.update({
+    id: '/settings/',
+    path: '/settings/',
+    getParentRoute: () => ControlRoomRoute,
+  } as any)
+const ControlRoomWorkspacesIndexRoute =
+  ControlRoomWorkspacesIndexRouteImport.update({
+    id: '/workspaces/',
+    path: '/workspaces/',
+    getParentRoute: () => ControlRoomRoute,
+  } as any)
+const DashboardBillingIndexRoute = DashboardBillingIndexRouteImport.update({
+  id: '/billing/',
+  path: '/billing/',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardProjectsIndexRoute = DashboardProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardWorkspacesIndexRoute =
+  DashboardWorkspacesIndexRouteImport.update({
+    id: '/workspaces/',
+    path: '/workspaces/',
+    getParentRoute: () => DashboardRouteRoute,
+  } as any)
+const PreviewTokenIndexRoute = PreviewTokenIndexRouteImport.update({
+  id: '/$token/',
+  path: '/$token/',
+  getParentRoute: () => PreviewRoute,
+} as any)
+const MarketingBlogCategorySlugRoute =
+  MarketingBlogCategorySlugRouteImport.update({
+    id: '/blog/category/$slug',
+    path: '/blog/category/$slug',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const ControlRoomWorkspacesWorkspaceIdIndexRoute =
+  ControlRoomWorkspacesWorkspaceIdIndexRouteImport.update({
+    id: '/workspaces/$workspaceId/',
+    path: '/workspaces/$workspaceId/',
+    getParentRoute: () => ControlRoomRoute,
+  } as any)
+const DashboardProjectsIdIndexRoute =
+  DashboardProjectsIdIndexRouteImport.update({
+    id: '/projects/$id/',
+    path: '/projects/$id/',
+    getParentRoute: () => DashboardRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
-  "/": typeof IndexRoute
+  '/dashboard': typeof DashboardRouteRouteWithChildren
+  '/': typeof MarketingIndexRoute
+  '/control-room': typeof ControlRoomRouteWithChildren
+  '/preview': typeof PreviewRouteWithChildren
+  '/login': typeof AuthLoginRoute
+  '/reset-password': typeof AuthResetPasswordRoute
+  '/about': typeof MarketingAboutRoute
+  '/brand': typeof MarketingBrandRoute
+  '/company': typeof MarketingCompanyRoute
+  '/contact': typeof MarketingContactRoute
+  '/customers': typeof MarketingCustomersRoute
+  '/help': typeof MarketingHelpRoute
+  '/integrations': typeof MarketingIntegrationsRoute
+  '/open': typeof MarketingOpenRoute
+  '/oss-friends': typeof MarketingOssFriendsRoute
+  '/pricing': typeof MarketingPricingRoute
+  '/builder/': typeof BuilderIndexRoute
+  '/control-room/': typeof ControlRoomIndexRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/onboarding/': typeof OnboardingIndexRoute
+  '/blog/$slug': typeof MarketingBlogSlugRoute
+  '/blog/': typeof MarketingBlogIndexRoute
+  '/control-room/affiliates/': typeof ControlRoomAffiliatesIndexRoute
+  '/control-room/people/': typeof ControlRoomPeopleIndexRoute
+  '/control-room/settings/': typeof ControlRoomSettingsIndexRoute
+  '/control-room/workspaces/': typeof ControlRoomWorkspacesIndexRoute
+  '/dashboard/billing/': typeof DashboardBillingIndexRoute
+  '/dashboard/projects/': typeof DashboardProjectsIndexRoute
+  '/dashboard/workspaces/': typeof DashboardWorkspacesIndexRoute
+  '/preview/$token/': typeof PreviewTokenIndexRoute
+  '/blog/category/$slug': typeof MarketingBlogCategorySlugRoute
+  '/control-room/workspaces/$workspaceId/': typeof ControlRoomWorkspacesWorkspaceIdIndexRoute
+  '/dashboard/projects/$id/': typeof DashboardProjectsIdIndexRoute
 }
 export interface FileRoutesByTo {
-  "/": typeof IndexRoute
+  '/': typeof MarketingIndexRoute
+  '/preview': typeof PreviewRouteWithChildren
+  '/login': typeof AuthLoginRoute
+  '/reset-password': typeof AuthResetPasswordRoute
+  '/about': typeof MarketingAboutRoute
+  '/brand': typeof MarketingBrandRoute
+  '/company': typeof MarketingCompanyRoute
+  '/contact': typeof MarketingContactRoute
+  '/customers': typeof MarketingCustomersRoute
+  '/help': typeof MarketingHelpRoute
+  '/integrations': typeof MarketingIntegrationsRoute
+  '/open': typeof MarketingOpenRoute
+  '/oss-friends': typeof MarketingOssFriendsRoute
+  '/pricing': typeof MarketingPricingRoute
+  '/builder': typeof BuilderIndexRoute
+  '/control-room': typeof ControlRoomIndexRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/onboarding': typeof OnboardingIndexRoute
+  '/blog/$slug': typeof MarketingBlogSlugRoute
+  '/blog': typeof MarketingBlogIndexRoute
+  '/control-room/affiliates': typeof ControlRoomAffiliatesIndexRoute
+  '/control-room/people': typeof ControlRoomPeopleIndexRoute
+  '/control-room/settings': typeof ControlRoomSettingsIndexRoute
+  '/control-room/workspaces': typeof ControlRoomWorkspacesIndexRoute
+  '/dashboard/billing': typeof DashboardBillingIndexRoute
+  '/dashboard/projects': typeof DashboardProjectsIndexRoute
+  '/dashboard/workspaces': typeof DashboardWorkspacesIndexRoute
+  '/preview/$token': typeof PreviewTokenIndexRoute
+  '/blog/category/$slug': typeof MarketingBlogCategorySlugRoute
+  '/control-room/workspaces/$workspaceId': typeof ControlRoomWorkspacesWorkspaceIdIndexRoute
+  '/dashboard/projects/$id': typeof DashboardProjectsIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  "/": typeof IndexRoute
+  '/dashboard': typeof DashboardRouteRouteWithChildren
+  '/_auth': typeof AuthRouteWithChildren
+  '/_marketing': typeof MarketingRouteWithChildren
+  '/control-room': typeof ControlRoomRouteWithChildren
+  '/preview': typeof PreviewRouteWithChildren
+  '/_auth/login': typeof AuthLoginRoute
+  '/_auth/reset-password': typeof AuthResetPasswordRoute
+  '/_marketing/about': typeof MarketingAboutRoute
+  '/_marketing/brand': typeof MarketingBrandRoute
+  '/_marketing/company': typeof MarketingCompanyRoute
+  '/_marketing/contact': typeof MarketingContactRoute
+  '/_marketing/customers': typeof MarketingCustomersRoute
+  '/_marketing/help': typeof MarketingHelpRoute
+  '/_marketing/integrations': typeof MarketingIntegrationsRoute
+  '/_marketing/open': typeof MarketingOpenRoute
+  '/_marketing/oss-friends': typeof MarketingOssFriendsRoute
+  '/_marketing/pricing': typeof MarketingPricingRoute
+  '/_marketing/': typeof MarketingIndexRoute
+  '/builder/': typeof BuilderIndexRoute
+  '/control-room/': typeof ControlRoomIndexRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/onboarding/': typeof OnboardingIndexRoute
+  '/_marketing/blog/$slug': typeof MarketingBlogSlugRoute
+  '/_marketing/blog/': typeof MarketingBlogIndexRoute
+  '/control-room/affiliates/': typeof ControlRoomAffiliatesIndexRoute
+  '/control-room/people/': typeof ControlRoomPeopleIndexRoute
+  '/control-room/settings/': typeof ControlRoomSettingsIndexRoute
+  '/control-room/workspaces/': typeof ControlRoomWorkspacesIndexRoute
+  '/dashboard/billing/': typeof DashboardBillingIndexRoute
+  '/dashboard/projects/': typeof DashboardProjectsIndexRoute
+  '/dashboard/workspaces/': typeof DashboardWorkspacesIndexRoute
+  '/preview/$token/': typeof PreviewTokenIndexRoute
+  '/_marketing/blog/category/$slug': typeof MarketingBlogCategorySlugRoute
+  '/control-room/workspaces/$workspaceId/': typeof ControlRoomWorkspacesWorkspaceIdIndexRoute
+  '/dashboard/projects/$id/': typeof DashboardProjectsIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: "/"
+  fullPaths:
+    | '/dashboard'
+    | '/'
+    | '/control-room'
+    | '/preview'
+    | '/login'
+    | '/reset-password'
+    | '/about'
+    | '/brand'
+    | '/company'
+    | '/contact'
+    | '/customers'
+    | '/help'
+    | '/integrations'
+    | '/open'
+    | '/oss-friends'
+    | '/pricing'
+    | '/builder/'
+    | '/control-room/'
+    | '/dashboard/'
+    | '/onboarding/'
+    | '/blog/$slug'
+    | '/blog/'
+    | '/control-room/affiliates/'
+    | '/control-room/people/'
+    | '/control-room/settings/'
+    | '/control-room/workspaces/'
+    | '/dashboard/billing/'
+    | '/dashboard/projects/'
+    | '/dashboard/workspaces/'
+    | '/preview/$token/'
+    | '/blog/category/$slug'
+    | '/control-room/workspaces/$workspaceId/'
+    | '/dashboard/projects/$id/'
   fileRoutesByTo: FileRoutesByTo
-  to: "/"
-  id: "__root__" | "/"
+  to:
+    | '/'
+    | '/preview'
+    | '/login'
+    | '/reset-password'
+    | '/about'
+    | '/brand'
+    | '/company'
+    | '/contact'
+    | '/customers'
+    | '/help'
+    | '/integrations'
+    | '/open'
+    | '/oss-friends'
+    | '/pricing'
+    | '/builder'
+    | '/control-room'
+    | '/dashboard'
+    | '/onboarding'
+    | '/blog/$slug'
+    | '/blog'
+    | '/control-room/affiliates'
+    | '/control-room/people'
+    | '/control-room/settings'
+    | '/control-room/workspaces'
+    | '/dashboard/billing'
+    | '/dashboard/projects'
+    | '/dashboard/workspaces'
+    | '/preview/$token'
+    | '/blog/category/$slug'
+    | '/control-room/workspaces/$workspaceId'
+    | '/dashboard/projects/$id'
+  id:
+    | '__root__'
+    | '/dashboard'
+    | '/_auth'
+    | '/_marketing'
+    | '/control-room'
+    | '/preview'
+    | '/_auth/login'
+    | '/_auth/reset-password'
+    | '/_marketing/about'
+    | '/_marketing/brand'
+    | '/_marketing/company'
+    | '/_marketing/contact'
+    | '/_marketing/customers'
+    | '/_marketing/help'
+    | '/_marketing/integrations'
+    | '/_marketing/open'
+    | '/_marketing/oss-friends'
+    | '/_marketing/pricing'
+    | '/_marketing/'
+    | '/builder/'
+    | '/control-room/'
+    | '/dashboard/'
+    | '/onboarding/'
+    | '/_marketing/blog/$slug'
+    | '/_marketing/blog/'
+    | '/control-room/affiliates/'
+    | '/control-room/people/'
+    | '/control-room/settings/'
+    | '/control-room/workspaces/'
+    | '/dashboard/billing/'
+    | '/dashboard/projects/'
+    | '/dashboard/workspaces/'
+    | '/preview/$token/'
+    | '/_marketing/blog/category/$slug'
+    | '/control-room/workspaces/$workspaceId/'
+    | '/dashboard/projects/$id/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  DashboardRouteRoute: typeof DashboardRouteRouteWithChildren
+  AuthRoute: typeof AuthRouteWithChildren
+  MarketingRoute: typeof MarketingRouteWithChildren
+  ControlRoomRoute: typeof ControlRoomRouteWithChildren
+  PreviewRoute: typeof PreviewRouteWithChildren
+  BuilderIndexRoute: typeof BuilderIndexRoute
+  OnboardingIndexRoute: typeof OnboardingIndexRoute
 }
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/": {
-      id: "/"
-      path: "/"
-      fullPath: "/"
-      preLoaderRoute: typeof IndexRouteImport
+    '/_auth': {
+      id: '/_auth'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/_marketing': {
+      id: '/_marketing'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof MarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/control-room': {
+      id: '/control-room'
+      path: '/control-room'
+      fullPath: '/control-room'
+      preLoaderRoute: typeof ControlRoomRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preview': {
+      id: '/preview'
+      path: '/preview'
+      fullPath: '/preview'
+      preLoaderRoute: typeof PreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_auth/login': {
+      id: '/_auth/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/reset-password': {
+      id: '/_auth/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof AuthResetPasswordRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_marketing/': {
+      id: '/_marketing/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof MarketingIndexRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/about': {
+      id: '/_marketing/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof MarketingAboutRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/brand': {
+      id: '/_marketing/brand'
+      path: '/brand'
+      fullPath: '/brand'
+      preLoaderRoute: typeof MarketingBrandRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/company': {
+      id: '/_marketing/company'
+      path: '/company'
+      fullPath: '/company'
+      preLoaderRoute: typeof MarketingCompanyRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/contact': {
+      id: '/_marketing/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof MarketingContactRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/customers': {
+      id: '/_marketing/customers'
+      path: '/customers'
+      fullPath: '/customers'
+      preLoaderRoute: typeof MarketingCustomersRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/help': {
+      id: '/_marketing/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof MarketingHelpRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/integrations': {
+      id: '/_marketing/integrations'
+      path: '/integrations'
+      fullPath: '/integrations'
+      preLoaderRoute: typeof MarketingIntegrationsRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/open': {
+      id: '/_marketing/open'
+      path: '/open'
+      fullPath: '/open'
+      preLoaderRoute: typeof MarketingOpenRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/oss-friends': {
+      id: '/_marketing/oss-friends'
+      path: '/oss-friends'
+      fullPath: '/oss-friends'
+      preLoaderRoute: typeof MarketingOssFriendsRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/pricing': {
+      id: '/_marketing/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof MarketingPricingRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/builder/': {
+      id: '/builder/'
+      path: '/builder'
+      fullPath: '/builder/'
+      preLoaderRoute: typeof BuilderIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/control-room/': {
+      id: '/control-room/'
+      path: '/'
+      fullPath: '/control-room/'
+      preLoaderRoute: typeof ControlRoomIndexRouteImport
+      parentRoute: typeof ControlRoomRoute
+    }
+    '/dashboard/': {
+      id: '/dashboard/'
+      path: '/'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/onboarding/': {
+      id: '/onboarding/'
+      path: '/onboarding'
+      fullPath: '/onboarding/'
+      preLoaderRoute: typeof OnboardingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_marketing/blog/': {
+      id: '/_marketing/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof MarketingBlogIndexRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/blog/$slug': {
+      id: '/_marketing/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof MarketingBlogSlugRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/control-room/affiliates/': {
+      id: '/control-room/affiliates/'
+      path: '/affiliates'
+      fullPath: '/control-room/affiliates/'
+      preLoaderRoute: typeof ControlRoomAffiliatesIndexRouteImport
+      parentRoute: typeof ControlRoomRoute
+    }
+    '/control-room/people/': {
+      id: '/control-room/people/'
+      path: '/people'
+      fullPath: '/control-room/people/'
+      preLoaderRoute: typeof ControlRoomPeopleIndexRouteImport
+      parentRoute: typeof ControlRoomRoute
+    }
+    '/control-room/settings/': {
+      id: '/control-room/settings/'
+      path: '/settings'
+      fullPath: '/control-room/settings/'
+      preLoaderRoute: typeof ControlRoomSettingsIndexRouteImport
+      parentRoute: typeof ControlRoomRoute
+    }
+    '/control-room/workspaces/': {
+      id: '/control-room/workspaces/'
+      path: '/workspaces'
+      fullPath: '/control-room/workspaces/'
+      preLoaderRoute: typeof ControlRoomWorkspacesIndexRouteImport
+      parentRoute: typeof ControlRoomRoute
+    }
+    '/dashboard/billing/': {
+      id: '/dashboard/billing/'
+      path: '/billing'
+      fullPath: '/dashboard/billing/'
+      preLoaderRoute: typeof DashboardBillingIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/projects/': {
+      id: '/dashboard/projects/'
+      path: '/projects'
+      fullPath: '/dashboard/projects/'
+      preLoaderRoute: typeof DashboardProjectsIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/workspaces/': {
+      id: '/dashboard/workspaces/'
+      path: '/workspaces'
+      fullPath: '/dashboard/workspaces/'
+      preLoaderRoute: typeof DashboardWorkspacesIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/preview/$token/': {
+      id: '/preview/$token/'
+      path: '/$token'
+      fullPath: '/preview/$token/'
+      preLoaderRoute: typeof PreviewTokenIndexRouteImport
+      parentRoute: typeof PreviewRoute
+    }
+    '/_marketing/blog/category/$slug': {
+      id: '/_marketing/blog/category/$slug'
+      path: '/blog/category/$slug'
+      fullPath: '/blog/category/$slug'
+      preLoaderRoute: typeof MarketingBlogCategorySlugRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/control-room/workspaces/$workspaceId/': {
+      id: '/control-room/workspaces/$workspaceId/'
+      path: '/workspaces/$workspaceId'
+      fullPath: '/control-room/workspaces/$workspaceId/'
+      preLoaderRoute: typeof ControlRoomWorkspacesWorkspaceIdIndexRouteImport
+      parentRoute: typeof ControlRoomRoute
+    }
+    '/dashboard/projects/$id/': {
+      id: '/dashboard/projects/$id/'
+      path: '/projects/$id'
+      fullPath: '/dashboard/projects/$id/'
+      preLoaderRoute: typeof DashboardProjectsIdIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
     }
   }
 }
 
+interface DashboardRouteRouteChildren {
+  DashboardIndexRoute: typeof DashboardIndexRoute
+  DashboardBillingIndexRoute: typeof DashboardBillingIndexRoute
+  DashboardProjectsIndexRoute: typeof DashboardProjectsIndexRoute
+  DashboardWorkspacesIndexRoute: typeof DashboardWorkspacesIndexRoute
+  DashboardProjectsIdIndexRoute: typeof DashboardProjectsIdIndexRoute
+}
+
+const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
+  DashboardIndexRoute: DashboardIndexRoute,
+  DashboardBillingIndexRoute: DashboardBillingIndexRoute,
+  DashboardProjectsIndexRoute: DashboardProjectsIndexRoute,
+  DashboardWorkspacesIndexRoute: DashboardWorkspacesIndexRoute,
+  DashboardProjectsIdIndexRoute: DashboardProjectsIdIndexRoute,
+}
+
+const DashboardRouteRouteWithChildren = DashboardRouteRoute._addFileChildren(
+  DashboardRouteRouteChildren,
+)
+
+interface AuthRouteChildren {
+  AuthLoginRoute: typeof AuthLoginRoute
+  AuthResetPasswordRoute: typeof AuthResetPasswordRoute
+}
+
+const AuthRouteChildren: AuthRouteChildren = {
+  AuthLoginRoute: AuthLoginRoute,
+  AuthResetPasswordRoute: AuthResetPasswordRoute,
+}
+
+const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
+
+interface MarketingRouteChildren {
+  MarketingAboutRoute: typeof MarketingAboutRoute
+  MarketingBrandRoute: typeof MarketingBrandRoute
+  MarketingCompanyRoute: typeof MarketingCompanyRoute
+  MarketingContactRoute: typeof MarketingContactRoute
+  MarketingCustomersRoute: typeof MarketingCustomersRoute
+  MarketingHelpRoute: typeof MarketingHelpRoute
+  MarketingIntegrationsRoute: typeof MarketingIntegrationsRoute
+  MarketingOpenRoute: typeof MarketingOpenRoute
+  MarketingOssFriendsRoute: typeof MarketingOssFriendsRoute
+  MarketingPricingRoute: typeof MarketingPricingRoute
+  MarketingIndexRoute: typeof MarketingIndexRoute
+  MarketingBlogSlugRoute: typeof MarketingBlogSlugRoute
+  MarketingBlogIndexRoute: typeof MarketingBlogIndexRoute
+  MarketingBlogCategorySlugRoute: typeof MarketingBlogCategorySlugRoute
+}
+
+const MarketingRouteChildren: MarketingRouteChildren = {
+  MarketingAboutRoute: MarketingAboutRoute,
+  MarketingBrandRoute: MarketingBrandRoute,
+  MarketingCompanyRoute: MarketingCompanyRoute,
+  MarketingContactRoute: MarketingContactRoute,
+  MarketingCustomersRoute: MarketingCustomersRoute,
+  MarketingHelpRoute: MarketingHelpRoute,
+  MarketingIntegrationsRoute: MarketingIntegrationsRoute,
+  MarketingOpenRoute: MarketingOpenRoute,
+  MarketingOssFriendsRoute: MarketingOssFriendsRoute,
+  MarketingPricingRoute: MarketingPricingRoute,
+  MarketingIndexRoute: MarketingIndexRoute,
+  MarketingBlogSlugRoute: MarketingBlogSlugRoute,
+  MarketingBlogIndexRoute: MarketingBlogIndexRoute,
+  MarketingBlogCategorySlugRoute: MarketingBlogCategorySlugRoute,
+}
+
+const MarketingRouteWithChildren = MarketingRoute._addFileChildren(
+  MarketingRouteChildren,
+)
+
+interface ControlRoomRouteChildren {
+  ControlRoomIndexRoute: typeof ControlRoomIndexRoute
+  ControlRoomAffiliatesIndexRoute: typeof ControlRoomAffiliatesIndexRoute
+  ControlRoomPeopleIndexRoute: typeof ControlRoomPeopleIndexRoute
+  ControlRoomSettingsIndexRoute: typeof ControlRoomSettingsIndexRoute
+  ControlRoomWorkspacesIndexRoute: typeof ControlRoomWorkspacesIndexRoute
+  ControlRoomWorkspacesWorkspaceIdIndexRoute: typeof ControlRoomWorkspacesWorkspaceIdIndexRoute
+}
+
+const ControlRoomRouteChildren: ControlRoomRouteChildren = {
+  ControlRoomIndexRoute: ControlRoomIndexRoute,
+  ControlRoomAffiliatesIndexRoute: ControlRoomAffiliatesIndexRoute,
+  ControlRoomPeopleIndexRoute: ControlRoomPeopleIndexRoute,
+  ControlRoomSettingsIndexRoute: ControlRoomSettingsIndexRoute,
+  ControlRoomWorkspacesIndexRoute: ControlRoomWorkspacesIndexRoute,
+  ControlRoomWorkspacesWorkspaceIdIndexRoute:
+    ControlRoomWorkspacesWorkspaceIdIndexRoute,
+}
+
+const ControlRoomRouteWithChildren = ControlRoomRoute._addFileChildren(
+  ControlRoomRouteChildren,
+)
+
+interface PreviewRouteChildren {
+  PreviewTokenIndexRoute: typeof PreviewTokenIndexRoute
+}
+
+const PreviewRouteChildren: PreviewRouteChildren = {
+  PreviewTokenIndexRoute: PreviewTokenIndexRoute,
+}
+
+const PreviewRouteWithChildren =
+  PreviewRoute._addFileChildren(PreviewRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  DashboardRouteRoute: DashboardRouteRouteWithChildren,
+  AuthRoute: AuthRouteWithChildren,
+  MarketingRoute: MarketingRouteWithChildren,
+  ControlRoomRoute: ControlRoomRouteWithChildren,
+  PreviewRoute: PreviewRouteWithChildren,
+  BuilderIndexRoute: BuilderIndexRoute,
+  OnboardingIndexRoute: OnboardingIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 
-import type { getRouter } from "./router.tsx"
-import type { createStart } from "@tanstack/react-start"
-declare module "@tanstack/react-start" {
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
   interface Register {
     ssr: true
     router: Awaited<ReturnType<typeof getRouter>>

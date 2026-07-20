@@ -12,6 +12,7 @@
   "devDependencies": {
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
+    "prisma": "6.19.3",
     "turbo": "^2.9.18",
     "typescript": "^6"
   },
@@ -28,5 +29,9 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@prisma/client": "6.19.3",
+    "@tanstack/react-start": "^1.168.32"
+  }
 }
