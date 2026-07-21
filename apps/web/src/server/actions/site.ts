@@ -1255,7 +1255,7 @@ export const updateSiteDeploymentAction = createServerFn({ method: "POST" })
       ownedDeployment.environment?.site
     ) {
       const appBaseUrl = (
-        process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+        process.env.VITE_APP_URL || "https://genia.tech"
       ).replace(/\/$/, "");
       const siteName = ownedDeployment.environment.site.name;
       const environmentName = ownedDeployment.environment.name ?? "Production";
@@ -1374,7 +1374,7 @@ export const addSiteCollaboratorAction = createServerFn({ method: "POST" })
     const collaboratorEmail =
       collaboratorWorkspace.businessEmail?.trim() || undefined;
     const appBaseUrl = (
-      process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+      process.env.VITE_APP_URL || "https://genia.tech"
     ).replace(/\/$/, "");
     const dashboardUrl = `${appBaseUrl}/dashboard/projects/${site.id}`;
     const collaboratorRole = collabInput.role ?? SiteCollaboratorRole.EDITOR;
@@ -1480,7 +1480,7 @@ export const initiateSiteTransferAction = createServerFn({ method: "POST" })
 
     const targetEmail = targetWorkspace.businessEmail?.trim() || undefined;
     const appBaseUrl = (
-      process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+      process.env.VITE_APP_URL || "https://genia.tech"
     ).replace(/\/$/, "");
     const reviewUrl = `${appBaseUrl}/dashboard/projects/${site.id}`;
     const fromWorkspaceName =
@@ -1541,7 +1541,7 @@ export const respondSiteTransferAction = createServerFn({ method: "POST" })
 
     const now = new Date();
     const appBaseUrl = (
-      process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+      process.env.VITE_APP_URL || "https://genia.tech"
     ).replace(/\/$/, "");
     const siteName = transfer.site?.name || "the site";
     const dashboardUrl = `${appBaseUrl}/dashboard/projects/${
@@ -1670,7 +1670,7 @@ export const cancelSiteTransferAction = createServerFn({ method: "POST" })
 
       if (recipients.length > 0) {
         const appBaseUrl = (
-          process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+          process.env.VITE_APP_URL || "https://genia.tech"
         ).replace(/\/$/, "");
         const siteName = transfer.site?.name || "the site";
         const dashboardUrl = `${appBaseUrl}/dashboard/projects/${

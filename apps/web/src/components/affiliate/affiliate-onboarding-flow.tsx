@@ -127,7 +127,7 @@ export function AffiliateOnboardingFlow({
   const [origin, setOrigin] = useState(
     typeof window !== "undefined"
       ? window.location.origin
-      : process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech",
+      : process.env.VITE_APP_URL || "https://genia.tech",
   );
 
   useEffect(() => {

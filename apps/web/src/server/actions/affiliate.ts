@@ -11,7 +11,7 @@ import { getStripeClient } from "@/lib/stripe/server";
 import type Stripe from "stripe";
 
 const AFFILIATE_BASE_URL =
-  process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+  process.env.VITE_APP_URL || "http://localhost:3000";
 
 function assertStripeConfigured() {
   if (!process.env.STRIPE_SECRET_KEY) {

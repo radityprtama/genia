@@ -77,7 +77,7 @@ function ProspectReviewCard({
   const [isDeleting, setIsDeleting] = useState(false);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
 
-  const shareUrl = `${process.env.NEXT_PUBLIC_APP_URL || window.location.origin}/preview/${review.shareToken}`;
+  const shareUrl = `${process.env.VITE_APP_URL || window.location.origin}/preview/${review.shareToken}`;
 
   const copyShareUrl = async () => {
     await navigator.clipboard.writeText(shareUrl);

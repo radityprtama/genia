@@ -120,7 +120,7 @@ export const createProspectReviewAction = createServerFn({ method: "POST" })
     }
 
     const appBaseUrl = (
-      process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+      process.env.VITE_APP_URL || "https://genia.tech"
     ).replace(/\/$/, "");
     const shareUrl = `${appBaseUrl}/preview/${review.shareToken}`;
     const workspaceDisplayName =
@@ -236,7 +236,7 @@ export const respondToProspectReviewAction = createServerFn({ method: "POST" })
 
     const now = new Date();
     const appBaseUrl = (
-      process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+      process.env.VITE_APP_URL || "https://genia.tech"
     ).replace(/\/$/, "");
     const shareUrl = `${appBaseUrl}/preview/${review.shareToken}`;
     const dashboardUrl = `${appBaseUrl}/dashboard/projects/${review.siteId}`;
@@ -384,7 +384,7 @@ export const resendProspectReviewAction = createServerFn({ method: "POST" })
     });
 
     const appBaseUrl = (
-      process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+      process.env.VITE_APP_URL || "https://genia.tech"
     ).replace(/\/$/, "");
     const shareUrl = `${appBaseUrl}/preview/${updatedReview.shareToken}`;
     const workspaceDisplayName =

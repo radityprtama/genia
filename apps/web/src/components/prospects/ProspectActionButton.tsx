@@ -166,7 +166,7 @@ export function ProspectActionButton({
               </p>
               <Button size="sm" variant="outline" className="w-full" asChild>
                 <a
-                  href={`${process.env.NEXT_PUBLIC_APP_URL || window.location.origin}/preview/${latestReview?.shareToken}?step=details`}
+                  href={`${process.env.VITE_APP_URL || window.location.origin}/preview/${latestReview?.shareToken}?step=details`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

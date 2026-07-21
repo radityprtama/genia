@@ -199,7 +199,7 @@ export const addDomainToEnvironmentAction = createServerFn({ method: "POST" })
 
       if (!vercelDomain.verified && canSendEmail() && recipients.length > 0) {
         const appBaseUrl = (
-          process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+          process.env.VITE_APP_URL || "https://genia.tech"
         ).replace(/\/$/, "");
         const verifyUrl = `${appBaseUrl}/dashboard/projects/${environment.siteId}`;
 
@@ -286,7 +286,7 @@ export const verifyDomainAction = createServerFn({ method: "POST" })
           domain.environment.site.workspace?.businessEmail?.trim();
         if (workspaceEmail) {
           const appBaseUrl = (
-            process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+            process.env.VITE_APP_URL || "https://genia.tech"
           ).replace(/\/$/, "");
           const dnsRecordsUrl = `${appBaseUrl}/dashboard/projects/${domain.environment.siteId}`;
           const lastCheckedAt =
@@ -336,7 +336,7 @@ export const verifyDomainAction = createServerFn({ method: "POST" })
           domain.environment.site.workspace?.businessEmail?.trim();
         if (workspaceEmail) {
           const appBaseUrl = (
-            process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+            process.env.VITE_APP_URL || "https://genia.tech"
           ).replace(/\/$/, "");
           const dnsRecordsUrl = `${appBaseUrl}/dashboard/projects/${domain.environment.siteId}`;
           const lastCheckedAt = new Date().toLocaleString(undefined, {

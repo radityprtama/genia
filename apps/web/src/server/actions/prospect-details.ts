@@ -60,7 +60,7 @@ export const submitProspectDetailsAction = createServerFn({ method: "POST" })
       ),
     );
     const appBaseUrl = (
-      process.env.NEXT_PUBLIC_APP_URL || "https://genia.tech"
+      process.env.VITE_APP_URL || "https://genia.tech"
     ).replace(/\/$/, "");
     const dashboardUrl = `${appBaseUrl}/dashboard/projects/${review.siteId}`;
 
