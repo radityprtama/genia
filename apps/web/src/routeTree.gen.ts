@@ -13,6 +13,7 @@ import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as ControlRoomRouteImport } from './routes/control-room'
 import { Route as DashboardRouteRouteImport } from './routes/dashboard/route'
 import { Route as PreviewRouteImport } from './routes/preview'
+import { Route as AuthAuthRouteImport } from './routes/_auth.auth'
 import { Route as AuthLoginRouteImport } from './routes/_auth.login'
 import { Route as AuthResetPasswordRouteImport } from './routes/_auth.reset-password'
 import { Route as AuthTwoFactorRouteImport } from './routes/_auth.two-factor'
@@ -53,6 +54,11 @@ const PreviewRoute = PreviewRouteImport.update({
   id: '/preview',
   path: '/preview',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AuthAuthRoute = AuthAuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => AuthRoute,
 } as any)
 const AuthLoginRoute = AuthLoginRouteImport.update({
   id: '/login',
@@ -171,6 +177,7 @@ export interface FileRoutesByFullPath {
   '/': typeof AuthRouteWithChildren
   '/control-room': typeof ControlRoomRouteWithChildren
   '/preview': typeof PreviewRouteWithChildren
+  '/auth': typeof AuthAuthRoute
   '/login': typeof AuthLoginRoute
   '/reset-password': typeof AuthResetPasswordRoute
   '/two-factor': typeof AuthTwoFactorRoute
@@ -196,6 +203,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof AuthRouteWithChildren
   '/preview': typeof PreviewRouteWithChildren
+  '/auth': typeof AuthAuthRoute
   '/login': typeof AuthLoginRoute
   '/reset-password': typeof AuthResetPasswordRoute
   '/two-factor': typeof AuthTwoFactorRoute
@@ -224,6 +232,7 @@ export interface FileRoutesById {
   '/_auth': typeof AuthRouteWithChildren
   '/control-room': typeof ControlRoomRouteWithChildren
   '/preview': typeof PreviewRouteWithChildren
+  '/_auth/auth': typeof AuthAuthRoute
   '/_auth/login': typeof AuthLoginRoute
   '/_auth/reset-password': typeof AuthResetPasswordRoute
   '/_auth/two-factor': typeof AuthTwoFactorRoute
@@ -253,6 +262,7 @@ export interface FileRouteTypes {
     | '/'
     | '/control-room'
     | '/preview'
+    | '/auth'
     | '/login'
     | '/reset-password'
     | '/two-factor'
@@ -278,6 +288,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/preview'
+    | '/auth'
     | '/login'
     | '/reset-password'
     | '/two-factor'
@@ -305,6 +316,7 @@ export interface FileRouteTypes {
     | '/_auth'
     | '/control-room'
     | '/preview'
+    | '/_auth/auth'
     | '/_auth/login'
     | '/_auth/reset-password'
     | '/_auth/two-factor'
@@ -370,6 +382,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/preview'
       preLoaderRoute: typeof PreviewRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/_auth/auth': {
+      id: '/_auth/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthAuthRouteImport
+      parentRoute: typeof AuthRoute
     }
     '/_auth/login': {
       id: '/_auth/login'
@@ -542,12 +561,14 @@ const DashboardRouteRouteWithChildren = DashboardRouteRoute._addFileChildren(
 )
 
 interface AuthRouteChildren {
+  AuthAuthRoute: typeof AuthAuthRoute
   AuthLoginRoute: typeof AuthLoginRoute
   AuthResetPasswordRoute: typeof AuthResetPasswordRoute
   AuthTwoFactorRoute: typeof AuthTwoFactorRoute
 }
 
 const AuthRouteChildren: AuthRouteChildren = {
+  AuthAuthRoute: AuthAuthRoute,
   AuthLoginRoute: AuthLoginRoute,
   AuthResetPasswordRoute: AuthResetPasswordRoute,
   AuthTwoFactorRoute: AuthTwoFactorRoute,

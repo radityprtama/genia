@@ -1,5 +1,6 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 import { ThemeProvider } from "next-themes"
+import { Toaster } from "sonner"
 import type React from "react"
 
 import appCss from "@workspace/ui/globals.css?url"
@@ -32,7 +33,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="antialiased font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -40,6 +41,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           disableTransitionOnChange
         >
           {children}
+          <Toaster />
         </ThemeProvider>
         <Scripts />
       </body>

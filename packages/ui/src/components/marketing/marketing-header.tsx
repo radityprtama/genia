@@ -310,11 +310,11 @@ export default function MarketingHeader() {
                   onChange={setTheme}
                   value={theme as "light" | "dark" | "system"}
                 />
-                  <Button asChild size="sm">
-                    <a href={appUrl("/auth?mode=sign-up")}>
-                      <span>Get Started</span>
-                    </a>
-                  </Button>
+                <Button asChild size="sm">
+                  <a href={appUrl("/login?mode=sign-up")}>
+                    <span>Sign Up</span>
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
@@ -400,27 +400,15 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
       </div>
 
       <div className="mt-auto border-t bg-background/50 p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] backdrop-blur-sm">
-        <div className="grid grid-cols-2 gap-4">
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="h-14 w-full rounded-xl text-base border-border/50 bg-background/50 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground"
-          >
-            <a href={appUrl("/auth?mode=sign-in")} onClick={closeMenu}>
-              Log In
-            </a>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            className="h-14 w-full rounded-xl text-base shadow-lg shadow-primary/20"
-          >
-            <a href={appUrl("/auth?mode=sign-up")} onClick={closeMenu}>
-              Get Started
-            </a>
-          </Button>
-        </div>
+        <Button
+          asChild
+          size="lg"
+          className="h-14 w-full rounded-xl text-base shadow-lg shadow-primary/20"
+        >
+          <a href={appUrl("/login?mode=sign-up")} onClick={closeMenu}>
+            Sign Up
+          </a>
+        </Button>
       </div>
     </nav>
   );

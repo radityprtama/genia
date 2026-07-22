@@ -15,7 +15,7 @@ export default function CallToAction() {
                             <p className="text-muted-foreground mb-6 mt-4 text-balance">Join thousands of developers and agencies building websites faster with AI-powered automation.</p>
 
                             <Button asChild>
-                                <a href={appUrl("/auth?mode=sign-up")}>Start Building</a>
+                                <a href={appUrl("/login?mode=sign-up")}>Start Building</a>
                             </Button>
                         </div>
                     </div>

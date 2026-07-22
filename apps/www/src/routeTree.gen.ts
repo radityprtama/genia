@@ -19,6 +19,7 @@ import { Route as MarketingContactRouteImport } from './routes/_marketing.contac
 import { Route as MarketingCustomersRouteImport } from './routes/_marketing.customers'
 import { Route as MarketingHelpRouteImport } from './routes/_marketing.help'
 import { Route as MarketingIntegrationsRouteImport } from './routes/_marketing.integrations'
+import { Route as MarketingInvestorRouteImport } from './routes/_marketing.investor'
 import { Route as MarketingOpenRouteImport } from './routes/_marketing.open'
 import { Route as MarketingOssFriendsRouteImport } from './routes/_marketing.oss-friends'
 import { Route as MarketingPricingRouteImport } from './routes/_marketing.pricing'
@@ -78,6 +79,11 @@ const MarketingHelpRoute = MarketingHelpRouteImport.update({
 const MarketingIntegrationsRoute = MarketingIntegrationsRouteImport.update({
   id: '/integrations',
   path: '/integrations',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingInvestorRoute = MarketingInvestorRouteImport.update({
+  id: '/investor',
+  path: '/investor',
   getParentRoute: () => MarketingRoute,
 } as any)
 const MarketingOpenRoute = MarketingOpenRouteImport.update({
@@ -151,6 +157,7 @@ export interface FileRoutesByFullPath {
   '/customers': typeof MarketingCustomersRouteWithChildren
   '/help': typeof MarketingHelpRouteWithChildren
   '/integrations': typeof MarketingIntegrationsRouteWithChildren
+  '/investor': typeof MarketingInvestorRoute
   '/open': typeof MarketingOpenRoute
   '/oss-friends': typeof MarketingOssFriendsRoute
   '/pricing': typeof MarketingPricingRoute
@@ -172,6 +179,7 @@ export interface FileRoutesByTo {
   '/customers': typeof MarketingCustomersRouteWithChildren
   '/help': typeof MarketingHelpRouteWithChildren
   '/integrations': typeof MarketingIntegrationsRouteWithChildren
+  '/investor': typeof MarketingInvestorRoute
   '/open': typeof MarketingOpenRoute
   '/oss-friends': typeof MarketingOssFriendsRoute
   '/pricing': typeof MarketingPricingRoute
@@ -196,6 +204,7 @@ export interface FileRoutesById {
   '/_marketing/customers': typeof MarketingCustomersRouteWithChildren
   '/_marketing/help': typeof MarketingHelpRouteWithChildren
   '/_marketing/integrations': typeof MarketingIntegrationsRouteWithChildren
+  '/_marketing/investor': typeof MarketingInvestorRoute
   '/_marketing/open': typeof MarketingOpenRoute
   '/_marketing/oss-friends': typeof MarketingOssFriendsRoute
   '/_marketing/pricing': typeof MarketingPricingRoute
@@ -221,6 +230,7 @@ export interface FileRouteTypes {
     | '/customers'
     | '/help'
     | '/integrations'
+    | '/investor'
     | '/open'
     | '/oss-friends'
     | '/pricing'
@@ -242,6 +252,7 @@ export interface FileRouteTypes {
     | '/customers'
     | '/help'
     | '/integrations'
+    | '/investor'
     | '/open'
     | '/oss-friends'
     | '/pricing'
@@ -265,6 +276,7 @@ export interface FileRouteTypes {
     | '/_marketing/customers'
     | '/_marketing/help'
     | '/_marketing/integrations'
+    | '/_marketing/investor'
     | '/_marketing/open'
     | '/_marketing/oss-friends'
     | '/_marketing/pricing'
@@ -353,6 +365,13 @@ declare module '@tanstack/react-router' {
       path: '/integrations'
       fullPath: '/integrations'
       preLoaderRoute: typeof MarketingIntegrationsRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/investor': {
+      id: '/_marketing/investor'
+      path: '/investor'
+      fullPath: '/investor'
+      preLoaderRoute: typeof MarketingInvestorRouteImport
       parentRoute: typeof MarketingRoute
     }
     '/_marketing/open': {
@@ -494,6 +513,7 @@ interface MarketingRouteChildren {
   MarketingCustomersRoute: typeof MarketingCustomersRouteWithChildren
   MarketingHelpRoute: typeof MarketingHelpRouteWithChildren
   MarketingIntegrationsRoute: typeof MarketingIntegrationsRouteWithChildren
+  MarketingInvestorRoute: typeof MarketingInvestorRoute
   MarketingOpenRoute: typeof MarketingOpenRoute
   MarketingOssFriendsRoute: typeof MarketingOssFriendsRoute
   MarketingPricingRoute: typeof MarketingPricingRoute
@@ -512,6 +532,7 @@ const MarketingRouteChildren: MarketingRouteChildren = {
   MarketingCustomersRoute: MarketingCustomersRouteWithChildren,
   MarketingHelpRoute: MarketingHelpRouteWithChildren,
   MarketingIntegrationsRoute: MarketingIntegrationsRouteWithChildren,
+  MarketingInvestorRoute: MarketingInvestorRoute,
   MarketingOpenRoute: MarketingOpenRoute,
   MarketingOssFriendsRoute: MarketingOssFriendsRoute,
   MarketingPricingRoute: MarketingPricingRoute,

@@ -1,6 +1,6 @@
 import { Button } from "@workspace/ui/components/button";
 import { type CarouselApi } from "@workspace/ui/components/carousel";
-import { cn } from "@/lib/utils";
+import { cn } from "@workspace/ui/lib/utils";
 import {
   Dialog,
   DialogContent,
@@ -19,7 +19,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { useHotkeys } from "react-hotkeys-hook";
 import { FaXTwitter } from "react-icons/fa6";
-import { CopyInput } from "@/components/pitch/copy-input";
+import { CopyInput } from "./copy-input";
 
 type Props = {
   api: CarouselApi;

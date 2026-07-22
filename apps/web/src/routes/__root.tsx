@@ -1,4 +1,7 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
+import { ThemeProvider } from "next-themes"
+import { Toaster } from "sonner"
+import type React from "react"
 
 import appCss from "@workspace/ui/globals.css?url"
 
@@ -13,7 +16,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "TanStack Start Starter",
+        title: "Genia – AI Website Builder for Agencies & Businesses",
       },
     ],
     links: [
@@ -38,12 +41,22 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
-      <body>
-        {children}
+      <body className="antialiased font-sans">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="min-h-screen bg-background">
+            {children}
+          </div>
+          <Toaster />
+        </ThemeProvider>
         <Scripts />
       </body>
     </html>

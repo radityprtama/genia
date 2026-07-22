@@ -1,15 +1,15 @@
 "use client";
 
-import { SectionBook } from "@/components/pitch/section-book";
-import { SectionDemo } from "@/components/pitch/section-demo";
-import { SectionNext } from "@/components/pitch/section-next";
-import { SectionProblem } from "@/components/pitch/section-problem";
-import { SectionSolution } from "@/components/pitch/section-solution";
-import { SectionStart } from "@/components/pitch/section-start";
-import { SectionPricing } from "@/components/pitch/section-pricing";
-import { SectionTeam } from "@/components/pitch/section-team";
-import { SectionTraction } from "@/components/pitch/section-traction";
-import { SectionVision } from "@/components/pitch/section-vision";
+import { SectionBook } from "./section-book";
+import { SectionDemo } from "./section-demo";
+import { SectionNext } from "./section-next";
+import { SectionProblem } from "./section-problem";
+import { SectionSolution } from "./section-solution";
+import { SectionStart } from "./section-start";
+import { SectionPricing } from "./section-pricing";
+import { SectionTeam } from "./section-team";
+import { SectionTraction } from "./section-traction";
+import { SectionVision } from "./section-vision";
 import {
   Carousel,
   type CarouselApi,

@@ -84,7 +84,7 @@ export default function Pricing() {
                   <div className="text-muted-foreground text-sm">Per month</div>
                 </div>
                 <Button asChild variant="outline" className="w-full">
-                  <a href={appUrl("/auth?mode=sign-up")}>Get Started</a>
+                  <a href={appUrl("/login?mode=sign-up")}>Get Started</a>
                 </Button>
 
                 <ul role="list" className="space-y-3 text-sm">
@@ -128,7 +128,7 @@ export default function Pricing() {
                   </div>
                 </div>
                 <Button asChild className="w-full">
-                  <a href={appUrl("/auth?mode=sign-up")}>Upgrade</a>
+                  <a href={appUrl("/login?mode=sign-up")}>Upgrade</a>
                 </Button>
 
                 <ul role="list" className="space-y-3 text-sm">
@@ -182,7 +182,7 @@ export default function Pricing() {
                   </div>
                 </div>
                 <Button asChild variant="outline" className="w-full">
-                  <a href={appUrl("/auth?mode=sign-up")}>Upgrade</a>
+                  <a href={appUrl("/login?mode=sign-up")}>Upgrade</a>
                 </Button>
 
                 <ul role="list" className="space-y-3 text-sm">
